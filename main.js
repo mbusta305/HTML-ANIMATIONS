@@ -1,7 +1,18 @@
-window.onload = function() {
+var html = '';
+var red;
+var green;
+var blue;
+var rgbColor;
 
-  var canvas = document.getElementById("canvas"),
-    context = canvas.getContext("2d");
-
-  context.fillRect(10, 10, 100, 200);
+function randomnRGB(){
+  return Math.floor(Math.random() * 256 );
 }
+
+for (var i = 1; i<= 10; i += 1) {
+  red = randomnRGB();
+  green = randomnRGB();
+  blue = randomnRGB();
+  rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+  html += '<div style="background-color:' + rgbColor + '"></div>';
+}
+document.write(html);
